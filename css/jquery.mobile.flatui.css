@@ -156,7 +156,7 @@
 .ui-btn-down-a{border:1px solid #4e6d8d;background:#4e6d8d;font-weight:bold;color:#fff;}
 .ui-btn-down-a:visited,.ui-btn-down-a:hover,.ui-btn-down-a a.ui-link-inherit{color:#fff}
 .ui-btn-up-a,.ui-btn-hover-a,.ui-btn-down-a{font-family:Lato,sans-serif;text-decoration:none}
-.ui-bar-a .ui-btn-up-a,.ui-bar-a .ui-btn-down-a,.ui-bar-a .ui-btn-hover-a{background-color:#3f3f3f;border:1px solid #2c3e50}
+.ui-bar-a .ui-btn-up-a,.ui-bar-a .ui-btn-down-a,.ui-bar-a .ui-btn-hover-a{background-color:#000;border:0px solid black;}
 
 /* MENU LATERAL */
 #panel ul{
@@ -1715,11 +1715,11 @@ div.ui-btn-text { width: auto; }
 .ui-header .ui-btn-icon-left .ui-btn-inner,
 .ui-footer .ui-btn-icon-left .ui-btn-inner,
 .ui-mini.ui-btn-icon-left .ui-btn-inner,
-.ui-mini .ui-btn-icon-left .ui-btn-inner { padding-left: 30px; }
+.ui-mini .ui-btn-icon-left .ui-btn-inner { padding-left: 30px;margin-top:10px; }
 .ui-header .ui-btn-icon-right .ui-btn-inner,
 .ui-footer .ui-btn-icon-right .ui-btn-inner,
 .ui-mini.ui-btn-icon-right .ui-btn-inner,
-.ui-mini .ui-btn-icon-right .ui-btn-inner { padding-right: 30px; }
+.ui-mini .ui-btn-icon-right .ui-btn-inner { padding-right: 30px;margin-top:10px; }
 .ui-header .ui-btn-icon-top .ui-btn-inner,
 .ui-footer .ui-btn-icon-top .ui-btn-inner { padding: 30px 3px .5em 3px; }
 .ui-mini.ui-btn-icon-top .ui-btn-inner,
