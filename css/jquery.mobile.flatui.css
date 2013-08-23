@@ -3024,3 +3024,10 @@ div.ui-slider-switch.ui-mini {
 
 /* customizations to jqm.structure.css */
 .ui-collapsible-inset .ui-collapsible-content { margin: 0; border-right-width: 2px; border-left-width: 2px; }
+
+.welcome_ticker{
+	position: absolute;
+	bottom:0;
+	left:50%;
+	margin-left:-350px;
+}
