@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    <link rel="stylesheet" type="text/css" href="css/jquery.mobile.flatui.css" />
+    <link rel="stylesheet" type="text/css" href="css/audioplayer_style.css">
+    <title>NOIDZ APP</title>
+</head>
+<body>
+<!-- AUDIO -->
+<div data-role="page" id="audio" style="background:#000;">
+
+    <div data-role="panel" id="panel" data-position="right" data-theme="a" data-display="push">
+        <ul>
+            <li><a href="index.html" rel="external" data-ajax="false" data-role="button" data-transition="slide">HOME</a></li>
+            <li><a href="#audio" data-role="button" data-transition="slide">AUDIO</a></li>
+            <li><a href="#video" data-role="button" data-transition="slide">VIDEO</a></li>
+            <li><a href="#fotos" data-role="button" data-transition="slide">FOTOS</a></li>
+            <li><a href="#loja" data-role="button" data-transition="slide">LOJA</a></li>
+            <li><a href="#contactos" data-role="button" data-transition="slide">CONTACTOS</a></li>
+        </ul>
+    </div>
+
+    <header data-role="header" data-position="fixed" data-theme="a">
+      <a data-role="button" data-direction="reverse" data-rel="back" href="#link1" data-icon="arrow-l" data-iconpos="left">
+        Back
+      </a>
+      <h1>AUDIO</h1>
+      <a  data-iconpos="right" href="#panel" data-role="button" data-icon="flat-menu">Menu</a>
+
+    <div id="audio-content" data-role="content" data-theme="a" style="background-image:url('img/audio_bg.jpg');height:527px;">
+       
+  </div><!-- /content -->
+
+    </div>
+    
+
+</div><!-- /AUDIO -->
+
+<script type="text/javascript" src="phonegap.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.mobile-1.3.1.min.js"></script>
+<script src="js/site.js" type="text/javascript"></script>
+<script type="text/javascript" src="js/jquery-1.6.1.min.js"></script>
+<script type="text/javascript" src="js/jquery-jplayer/jquery.jplayer.js"></script>
+<script type="text/javascript" src="js/ttw-music-player-min.js"></script>
+<script type="text/javascript" src="js/myplaylist.js"></script>
+
+
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            var description = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id tortor nisi. Aenean sodales diam ac lacus elementum scelerisque. Suspendisse a dui vitae lacus faucibus venenatis vel id nisl. Proin orci ante, ultricies nec interdum at, iaculis venenatis nulla. ';
+
+            $('#audio-content').ttwMusicPlayer(myPlaylist, {
+                autoPlay:false, 
+                description:description,
+                jPlayer:{
+                    swfPath:'js/jquery-jplayer' //You need to override the default swf path any time the directory structure changes
+                }
+            });
+        });
+    </script>  
+</body>
+</html>
