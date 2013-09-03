@@ -124,14 +124,16 @@
       <h1>VIDEO</h1>
       <a  data-iconpos="right" href="#panel" data-role="button" data-icon="flat-menu">Menu</a>
     <!--</div>-->
+    <!--<div data-role="content" role="main">	-->
+	<div data-role="content" data-theme="a">
+		<div id="path"></div>	
+	</div><!-- /content -->
 	</div><!-- /header -->
 
-    <!--<div data-role="content" role="main">	-->
-		
 
-	<div data-role="content" data-theme="a">
-		<p>Hello world VIDEO</p>		
-	</div><!-- /content -->
+	<!--<div data-role="content" data-theme="a">teste
+		<div id="path"></div>		
+	</div> /content -->
 
 </div><!-- /VIDEO -->
 
@@ -259,19 +261,30 @@
         </script>
         -->
     
-        <script type="text/javascript">    
-	        function refreshPage() {
-		        $.mobile.changePage(
-		        window.location.href,
-		        {
-			        allowSamePageTransition : true,
-			        transition              : 'none',
-			        showLoadMsg             : false,
-			        reloadPage              : true
-			        }
-			        );
-			    };
+        <script type="text/javascript">
+        $(document).ready(function() { 
+	        function getPhoneGapPath() {
+  
+		        var path = window.location.pathname;
+		        //var path = '/android_asset/www/index.html'; //delete this line! test only
+		        path = path.substr( path, path.length - 10 );
+		        return 'file://' + path;
     
+		        };
+		    
+		    var pathName = getPhoneGapPath() + 'test.wav';
+
+		    document.getElementById( 'path' ).textContent = pathName;
+		    
+		    document.addEventListener("deviceready", onDeviceReady, true);
+
+		    function onDeviceReady(){
+		        window.alert("OK@!");
+		        var snd = new Media("");
+		        snd.play();
+		    }
+		
+           });
         </script>
         
     </body>
