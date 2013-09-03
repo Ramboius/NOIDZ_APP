@@ -9,8 +9,8 @@
 var myPlaylist = [
 
     {
-        mp3:'mix/1.mp3',
-        oga:'mix/1.ogg',
+        mp3:'/android_asset/www/mix/1.mp3',
+        oga:'/android_asset/www/mix/1.ogg',
         title:'Sample',
         artist:'Sample',
         rating:4,
