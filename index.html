@@ -272,7 +272,7 @@
     
 		        };
 		    
-		    var pathName = getPhoneGapPath() + 'test.wav';
+		    var pathName = getPhoneGapPath() + 'mix/1.mp3';
 
 		    document.getElementById( 'path' ).textContent = pathName;
 		    
@@ -280,7 +280,7 @@
 
 		    function onDeviceReady(){
 		        window.alert("OK@!");
-		        var snd = new Media("file://android_asset/www/mix/1.mp3");
+		        var snd = new Media("/android_asset/www/mix/1.mp3");
 		        snd.play();
 		    }
 		
