@@ -125,7 +125,7 @@
    
    function onDeviceReady(){
    	console.log("Got device ready");
-   	updateMedia();
+   	//updateMedia();
    }
    
    function updateMedia(src) {
@@ -157,6 +157,7 @@
 	        );
 	    }, 1000);
 	    
+	    myMedia.play();
    }
 
    function setAudioPosition(position) {
