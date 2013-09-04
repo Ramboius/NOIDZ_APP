@@ -53,12 +53,11 @@
     <div data-role="content" data-theme="a" style="background-image:url('img/audio_bg.jpg');height:527px;">
     		<p id="audio_position"> sec</p>
     		<p>
-    			
-			   <form id="playlist" onchange="updateMedia()">
-			        <input type="radio" name="playlist" checked value="/android_asset/www/1.mp3">Música 1<br />
-			        <input type="radio" name="playlist" value="/android_asset/www/2.mp3">Música 2</option>
-			        <input type="radio" name="playlist" value="http://audio.ibeat.org/content/p1rj1s/p1rj1s_-_rockGuitar.mp3">Internet<br />
-			   </form>
+			   <select id="playlist" data-native-menu="false" name="select-choice-1" tabindex="-1" onchange="updateMedia()">
+			        <option checked value="/android_asset/www/1.mp3">Music 1</option>
+			        <option value="/android_asset/www/2.mp3">Music 2</option>
+			        <option value="http://audio.ibeat.org/content/p1rj1s/p1rj1s_-_rockGuitar.mp3">Internet</option>
+			   </select>
 			</p>
 		    <a href="#" onclick="playAudio()"><img id="play" src="img/play.jpg"></a>
 		    <a href="#" onclick="stopAudio()"><img id="stop" src="img/stop.jpg"></a>
