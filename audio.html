@@ -125,7 +125,31 @@
    
    function onDeviceReady(){
    	console.log("Got device ready");
-   	//updateMedia();
+   	// Clean up old file
+   	    if (myMedia != null) {
+			myMedia.release();
+		}
+		
+		// Get the new media file
+		var yourSelect = document.getElementById('playlist');		
+        myMedia = new Media(yourSelect.options[yourSelect.selectedIndex].value, stopAudio, null);
+
+		// Update media position every second
+	    var mediaTimer = setInterval(function() {
+	        // get media position
+	        myMedia.getCurrentPosition(
+	            // success callback
+	            function(position) {
+	                if (position > -1) {
+						document.getElementById('audio_position').innerHTML = (position/1000) + " sec";
+	                }
+	            },
+	            // error callback
+	            function(e) {
+	                console.log("Error getting pos=" + e);
+	            }
+	        );
+	    }, 1000);
    }
    
    function updateMedia(src) {
