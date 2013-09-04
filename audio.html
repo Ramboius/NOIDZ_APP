@@ -157,7 +157,7 @@
 	        );
 	    }, 1000);
 	    
-	    if (playing) {
+	    if (!playing) {
             myMedia.play();	
 			document.getElementById('play').src = "img/stop.jpg";
 			playing = true;	
