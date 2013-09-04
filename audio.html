@@ -26,7 +26,9 @@
     <link rel="stylesheet" type="text/css" href="css/audioplayer_style.css">
     <title>NOIDZ APP</title>
 </head>
-<body>
+
+ <body onload="onLoad()">
+ 
 <!-- AUDIO -->
 <div data-role="page" id="audio" style="background:#000;">
 
@@ -48,7 +50,17 @@
       <h1>AUDIO</h1>
       <a  data-iconpos="right" href="#panel" data-role="button" data-icon="flat-menu">Menu</a>
 
-    <div id="audio-content" data-role="content" data-theme="a" style="background-image:url('img/audio_bg.jpg');height:527px;">
+    <div data-role="content" data-theme="a" style="background-image:url('img/audio_bg.jpg');height:527px;">
+    		<p id="audio_position">0.000 sec</p>
+    		<p>
+			   <select id="playlist" onchange="updateMedia()">
+			        <option checked value="/android_asset/www/test.mp3">Asset</option>
+			        <option value="test.mp3">SD Card</option>
+			        <option value="http://audio.ibeat.org/content/p1rj1s/p1rj1s_-_rockGuitar.mp3">Internet</option>
+			   </select>
+			</p>
+		    <a href="#" onclick="playAudio()"><img id="play" src="img/play.jpg"></a>
+		    <a href="#" onclick="stopAudio()"><img id="stop" src="img/stop.jpg"></a>
        
   </div><!-- /content -->
 
@@ -66,7 +78,7 @@
 <script type="text/javascript" src="js/ttw-music-player-min.js"></script>
 <script type="text/javascript" src="js/myplaylist.js"></script>
 
-
+<!--
 
     <script type="text/javascript">
         $(document).ready(function(){
@@ -81,5 +93,74 @@
             });
         });
     </script>  
+-->
+
+<script type="text/javascript" charset="utf-8">
+   
+    var myMedia = null;
+	var playing = false;
+	
+    function playAudio() {
+		if (!playing) {
+                        myMedia.play();	
+			document.getElementById('play').src = "img/stop.jpg";
+			playing = true;	
+		} else {
+			myMedia.pause();
+                        document.getElementById('play').src = "images/play.jpg";    
+                        playing = false; 
+		}
+    }
+
+    function stopAudio() {
+		myMedia.stop();
+		playing = false;
+                document.getElementById('play').src = "images/play.jpg";    
+		document.getElementById('audio_position').innerHTML = "0.000 sec";
+	}
+
+   function onLoad() {
+       document.addEventListener("deviceready", onDeviceReady, false);
+   }
+   
+   function onDeviceReady(){
+   	console.log("Got device ready");
+   	updateMedia();
+   }
+   
+   function updateMedia(src) {
+   	    // Clean up old file
+   	    if (myMedia != null) {
+			myMedia.release();
+		}
+		
+		// Get the new media file
+		var yourSelect = document.getElementById('playlist');		
+                myMedia = new Media(yourSelect.options[yourSelect.selectedIndex].value, stopAudio, null);
+
+		// Update media position every second
+	        var mediaTimer = setInterval(function() {
+	        // get media position
+	        myMedia.getCurrentPosition(
+	            // success callback
+	            function(position) {
+	                if (position > -1) {
+						document.getElementById('audio_position').innerHTML = (position/1000) + " sec";
+	                }
+	            },
+	            // error callback
+	            function(e) {
+	                console.log("Error getting pos=" + e);
+	            }
+	        );
+	    }, 1000);
+   }
+
+   function setAudioPosition(position) {
+       document.getElementById('audio_position').innerHTML =position;
+   }
+ </script>
+ 
+ 
 </body>
 </html>
