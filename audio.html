@@ -129,6 +129,8 @@
    }
    
    function updateMedia(src) {
+   
+   
    	    // Clean up old file
    	    if (myMedia != null) {
 			myMedia.release();
@@ -155,8 +157,15 @@
 	        );
 	    }, 1000);
 	    
-	    
-            myMedia.play();
+	    if (playing) {
+            myMedia.play();	
+			document.getElementById('play').src = "img/stop.jpg";
+			playing = true;	
+		} else {
+			myMedia.pause();
+            document.getElementById('play').src = "img/play.jpg";    
+            playing = false; 
+		}
    }
 
    function setAudioPosition(position) {
