@@ -138,10 +138,10 @@
 		
 		// Get the new media file
 		var yourSelect = document.getElementById('playlist');		
-                myMedia = new Media(yourSelect.options[yourSelect.selectedIndex].value, stopAudio, null);
+        myMedia = new Media(yourSelect.options[yourSelect.selectedIndex].value, stopAudio, null);
 
 		// Update media position every second
-	        var mediaTimer = setInterval(function() {
+	    var mediaTimer = setInterval(function() {
 	        // get media position
 	        myMedia.getCurrentPosition(
 	            // success callback
@@ -157,15 +157,6 @@
 	        );
 	    }, 1000);
 	    
-	    if (!playing) {	
-			myMedia.pause();
-            document.getElementById('play').src = "img/play.jpg";    
-            playing = false; 
-		} else {
-            myMedia.play();	
-			document.getElementById('play').src = "img/stop.jpg";
-			playing = true;
-		}
    }
 
    function setAudioPosition(position) {
