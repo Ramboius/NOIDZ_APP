@@ -51,7 +51,6 @@
       <a  data-iconpos="right" href="#panel" data-role="button" data-icon="flat-menu">Menu</a>
 
     <div data-role="content" data-theme="a" style="background-image:url('img/audio_bg.jpg');height:527px;">
-    		<p id="audio_position"> sec</p>
     		<p>
 			   <select id="playlist" data-theme="b" data-native-menu="false" name="select-choice-1" tabindex="-1" onchange="updateMedia()">
 			        <option checked value="/android_asset/www/1.mp3">Music 1</option>
@@ -61,6 +60,8 @@
 			</p>
 		    <a href="#" onclick="playAudio()"><img id="play" src="img/play.jpg"></a>
 		    <a href="#" onclick="stopAudio()"><img id="stop" src="img/stop.jpg"></a>
+		    
+    		<p id="audio_position"> sec</p>
        
   </div><!-- /content -->
 
@@ -177,7 +178,7 @@
 	    }, 1000);
 	    
 	    myMedia.play();
-	    document.getElementById('play').src = "img/stop.jpg";
+	    document.getElementById('play').src = "img/pause.jpg";
 		playing = true;	
    }
 
