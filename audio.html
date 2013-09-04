@@ -137,7 +137,7 @@
 	            // success callback
 	            function(position) {
 	                if (position > -1) {
-						document.getElementById('audio_position').innerHTML = (position*1) + " sec";
+						document.getElementById('audio_position').innerHTML = Math.floor(position) + " sec";
 	                }
 	            },
 	            // error callback
