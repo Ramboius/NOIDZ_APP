@@ -157,14 +157,14 @@
 	        );
 	    }, 1000);
 	    
-	    if (!playing) {
-            myMedia.play();	
-			document.getElementById('play').src = "img/stop.jpg";
-			playing = true;	
-		} else {
+	    if (!playing) {	
 			myMedia.pause();
             document.getElementById('play').src = "img/play.jpg";    
             playing = false; 
+		} else {
+            myMedia.play();	
+			document.getElementById('play').src = "img/stop.jpg";
+			playing = true;
 		}
    }
 
