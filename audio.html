@@ -51,7 +51,7 @@
       <a  data-iconpos="right" href="#panel" data-role="button" data-icon="flat-menu">Menu</a>
 
     <div data-role="content" data-theme="a" style="background-image:url('img/audio_bg.jpg');height:527px;">
-    		<p id="audio_position">0.000 sec</p>
+    		<p id="audio_position"> sec</p>
     		<p>
 			   <select id="playlist" onchange="updateMedia()">
 			        <option checked value="/android_asset/www/1.mp3">Asset</option>
@@ -102,12 +102,12 @@
 	
     function playAudio() {
 		if (!playing) {
-                        myMedia.play();	
+            myMedia.play();	
 			document.getElementById('play').src = "img/stop.jpg";
 			playing = true;	
 		} else {
 			myMedia.pause();
-                        document.getElementById('play').src = "images/play.jpg";    
+                        document.getElementById('play').src = "img/play.jpg";    
                         playing = false; 
 		}
     }
@@ -115,7 +115,7 @@
     function stopAudio() {
 		myMedia.stop();
 		playing = false;
-                document.getElementById('play').src = "images/play.jpg";    
+                document.getElementById('play').src = "img/play.jpg";    
 		document.getElementById('audio_position').innerHTML = "0.000 sec";
 	}
 
