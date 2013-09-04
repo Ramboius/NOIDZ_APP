@@ -126,13 +126,8 @@
    function onDeviceReady(){
    	console.log("Got device ready");
    	// Clean up old file
-   	    if (myMedia != null) {
-			myMedia.release();
-		}
-		
-		// Get the new media file
-		var yourSelect = document.getElementById('playlist');		
-        myMedia = new Media(yourSelect.options[yourSelect.selectedIndex].value, stopAudio, null);
+				
+        myMedia = new Media("/android_asset/www/1.mp3", stopAudio, null);
 
 		// Update media position every second
 	    var mediaTimer = setInterval(function() {
