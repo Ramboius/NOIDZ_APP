@@ -62,6 +62,7 @@
 		    <a href="#" onclick="stopAudio()"><img id="stop" src="img/stop.jpg"></a>
 		    
     		<p id="audio_position"> sec</p>
+    		<img id="audioCover" src="img/play.jpg">
     		
   </div><!-- /content -->
 
@@ -129,6 +130,7 @@
    	// Clean up old file
 				
         myMedia = new Media("/android_asset/www/1.mp3", stopAudio, null);
+        document.getElementById('audioCover').src = "img/cover1.jpg"; 
 
 		// Update media position every second
 	    var mediaTimer = setInterval(function() {
@@ -136,7 +138,7 @@
 	        myMedia.getCurrentPosition(
 	            // success callback
 	            function(position) {
-	                if (position > -1) {
+	                if (position > 0) {
 						document.getElementById('audio_position').innerHTML = Math.floor(position) + " sec";
 	                }
 	            },
