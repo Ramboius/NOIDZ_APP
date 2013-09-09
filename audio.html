@@ -51,6 +51,7 @@
       <a  data-iconpos="right" href="#panel" data-role="button" data-icon="flat-menu">Menu</a>
 
     <div data-role="content" data-theme="a" style="background-image:url('img/audio_bg.jpg');height:527px;">
+    <!--
     		<p>
 			   <select id="playlist" data-theme="b" data-native-menu="false" name="select-choice-1" tabindex="-1" onchange="updateMedia()">
 			        <option checked value="/android_asset/www/1.mp3">Music 1</option>
@@ -63,7 +64,30 @@
 		    
     		<p id="audio_position"> sec</p>
     		<img id="audioCover" src="img/play.jpg">
-    		
+    	-->	
+    	<div id="audioPlayerContent">
+		    <a href="#" onclick="playAudio()"><img id="play" src="img/play.jpg"></a>
+		    <a href="#" onclick="stopAudio()"><img id="stop" src="img/stop.jpg"></a>
+    		<p id="audio_position"> sec</p>
+    	</div>
+    	<div id="audioPlayerList">
+    	<ul class="ui-listview" data-role="listview">
+			<li class="ui-btn ui-li ui-li-has-thumb ui-btn-up-c" data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-theme="c">
+				<div class="ui-btn-inner ui-li">
+					<div class="ui-btn-text">
+						<a class="ui-link-inherit" href="index.html">
+							<img class="ui-li-thumb" src="img/tb_cover1.jpg">
+							<h3 class="ui-li-heading">Broken Bells</h3>
+							<p class="ui-li-desc">Broken Bells</p>
+						</a>
+					</div>
+				</div>
+			</li>
+    		<li>
+    			Musica 2
+    		</li>
+    	</ul>
+    	</div>
   </div><!-- /content -->
 
     </div>

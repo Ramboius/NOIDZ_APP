@@ -1,4 +1,10 @@
-
+#audioPlayerList, #audioPlayerContent{
+	width:40%;
+	margin: 0 5%;
+	height: 537px;
+	float: left;
+	display: inline-block;
+}
 
 .ttw-music-player {
     width: 370px;
